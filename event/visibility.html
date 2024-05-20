@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        height: 100px;
+        background-color: orange;
+        transition: 1s;
+        visibility: hidden;
+        opacity: 0;
+      }
+      .container.show {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Toggle</button>
+    <div class="container"></div>
+    <script>
+      const btnEl = document.querySelector("button");
+      const containerEl = document.querySelector(".container");
+      btnEl.addEventListener("click", () => {
+        if (containerEl.classList.contains("show")) {
+          containerEl.classList.remove("show");
+        } else {
+          containerEl.classList.add("show");
+        }
+      });
+    </script>
+  </body>
+</html>
